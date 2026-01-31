@@ -1,60 +1,60 @@
-# 📉 EmployeeLoss (Employee Retention AI Bot)
+# 🗳️ Comp2laintBox (AI-Powered Feedback System)
 
 ![Python](https://img.shields.io/badge/python-3.x-blue?style=flat&logo=python)
 ![ML](https://img.shields.io/badge/Machine%20Learning-Scikit--learn-orange?style=flat)
 ![Interface](https://img.shields.io/badge/Interface-Gradio-yellow?style=flat)
 ![Status](https://img.shields.io/badge/Status-Model%20Showcase-lightgrey?style=flat)
 
-**EmployeeLoss** is an AI-powered chatbot designed to analyze employee feedback, detect sentiment, and categorize complaints/suggestions to improve company culture and reduce turnover.
+**Comp2laintBox** is an intelligent internal tool designed to modernize the traditional "Complaint Box" concept. It uses Natural Language Processing (NLP) to analyze, categorize, and report on employee feedback collected via Google Forms.
 
-This repository serves as a **showcase for the serialized model (`.pkl`) and architecture**. Due to the presence of proprietary company data and Personally Identifiable Information (PII), the full source code and dataset are not publicly available.
-
----
-
-## 🤖 System Overview & Architecture
-
-The system operates as an internal intelligence tool for HR departments. It processes raw data collected from employees and provides actionable insights through a conversational interface.
-
-### 🔄 The Workflow
-1.  **Data Collection:** Employees submit complaints, comments, and suggestions via **Google Forms**.
-2.  **Preprocessing:** Raw text data is cleaned and structured using **Pandas**.
-3.  **NLP Analysis:** The core model (built with **Scikit-learn**) performs:
-    * **Sentiment Analysis:** Determining the emotional tone of the feedback.
-    * **Categorization:** Classifying feedback into specific topics (e.g., Salary, Management, Cafeteria, Work Hours).
-4.  **Interaction:** A **Gradio** web interface allows authorized users to query the data naturally.
+This repository serves as a **technical showcase** for the serialized machine learning model (`.pkl`). Due to strict corporate data privacy policies and the inclusion of proprietary datasets, the full source code and training data are not publicly available.
 
 ---
 
-## 🔐 Security & Access Control
+## 🤖 System Architecture
 
-* **Domain-Restricted Auth:** The chatbot includes an authentication layer that only allows login via specific company email domains, ensuring sensitive employee feedback remains confidential.
-* **Privacy First:** The public repository does not contain the training data. Only the trained model structure (`.pkl`) is archived here.
+The system acts as a bridge between raw employee feedback and HR management, transforming unstructured text into actionable data.
 
----
-
-## 🧠 Technical Stack
-
-* **Python 3:** Core programming language.
-* **Scikit-learn:** Used for building the classification and sentiment analysis models.
-* **Pandas:** Used for data manipulation and creating the dataframe from Google Forms exports.
-* **Joblib:** Used for model serialization and persistence (saving/loading the `.pkl` file).
-* **Gradio:** Used to create the interactive web interface for the chatbot.
+### 🔄 Data Pipeline
+1.  **Input Source:** Feedback (Complaints, Suggestions, Comments) is collected through **Google Forms**.
+2.  **Data Processing:** **Pandas** is used to clean, structure, and preprocess the raw text data.
+3.  **AI Analysis:** The core model (built with **Scikit-learn**) processes the text to:
+    * **Analyze Sentiment:** Detects whether the feedback is positive, negative, or neutral.
+    * **Categorize Topics:** Automatically tags issues (e.g., "IT Support," "Cafeteria," "Management," "Working Hours").
+4.  **User Interface:** A conversational **Gradio** interface allows managers to query the database naturally.
 
 ---
 
-## 💬 Capabilities & Example Queries
+## 🔐 Security Features
 
-The model is trained on **Turkish** language datasets and supports queries such as:
-
-* *"How many suggestions do we have regarding the cafeteria?"* (Kafeterya hakkında kaç öneri var?)
-* *"What is the most frequent complaint topic this month?"* (Bu ay en çok hangi konuda şikayet var?)
-* *"Show me the negative feedback regarding overtime."* (Mesai saatleri ile ilgili olumsuz geri bildirimleri göster.)
+* **Corporate Authentication:** Access to the chatbot is restricted. The system validates users against a whitelist of company email domains, ensuring that sensitive internal data remains secure.
+* **Privacy Compliance:** The public version of this repository does not contain any Personally Identifiable Information (PII) or real employee data.
 
 ---
 
-## ⚠️ Note on Usage
+## 🧠 Tech Stack
 
-This repository contains the `model.pkl` file. However, without the proprietary server environment and the specific vectorizer vocabulary used during training, the model cannot be deployed locally by third parties. It is hosted here for **portfolio demonstration purposes only**.
+* **Python 3:** Primary development language.
+* **Scikit-learn:** Utilized for training the classification and sentiment analysis algorithms.
+* **Pandas:** For dataframe manipulation and data cleaning.
+* **Joblib:** For efficient model serialization (saving/loading the state).
+* **Gradio:** For building the interactive, web-based chatbot UI.
+
+---
+
+## 💬 Use Cases (Turkish Language Support)
+
+The model is specifically trained on **Turkish** corporate datasets and handles queries such as:
+
+* *"Yemekhane ile ilgili kaç şikayet var?"* (How many complaints are there regarding the cafeteria?)
+* *"En çok hangi departman hakkında öneri geldi?"* (Which department received the most suggestions?)
+* *"Geçen ayki olumsuz yorumların özetini ver."* (Summarize the negative comments from last month.)
+
+---
+
+## ⚠️ Portfolio Note
+
+This repository contains the `model.pkl` file to demonstrate the project's existence and architecture. It is **not intended for public deployment** as it requires a specific server environment and private vectorizer vocabularies to function correctly.
 
 ---
 
